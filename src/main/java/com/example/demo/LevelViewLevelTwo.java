@@ -9,8 +9,8 @@ public class LevelViewLevelTwo extends LevelView {
 	private final Group root;
 	private final ShieldImage shieldImage;
 	
-	public LevelViewLevelTwo(Group root, int heartsToDisplay) {
-		super(root, heartsToDisplay);
+	public LevelViewLevelTwo(Group root, int heartsToDisplay, int levelNumber) {
+		super(root, heartsToDisplay, levelNumber);
 		this.root = root;
 		this.shieldImage = new ShieldImage(SHIELD_X_POSITION, SHIELD_Y_POSITION);
 		addImagesToRoot();
@@ -23,7 +23,10 @@ public class LevelViewLevelTwo extends LevelView {
 	public void showShield() {
 		shieldImage.showShield();
 	}
-
+	
+	public void updateShieldPosition(double xPosition, double yPosition) {
+		shieldImage.updatePosition(xPosition, yPosition);
+	}
 	public void hideShield() {
 		shieldImage.hideShield();
 	}
